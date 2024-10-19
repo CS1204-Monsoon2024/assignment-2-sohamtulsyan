@@ -70,6 +70,8 @@ class HashTable{
     }
 
     void insert(int v){
+        if((float)(count/size)>0.8)//if we exceed the given threshold
+            resize();
         int k = v;
         i = k%size;//index obtained
         Node* curr = table[i];
@@ -88,9 +90,6 @@ class HashTable{
         table[i] = new_node;
         count++;
 
-        //finally, we must check if a resize is needed.
-        if((float)(count/size)>0.8)//if we exceed the given threshold
-            resize();
     }
 
     void remove(int k){

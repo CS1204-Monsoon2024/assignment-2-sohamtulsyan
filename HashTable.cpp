@@ -73,7 +73,7 @@ class HashTable{
         int k = v;
         i = k%size;//index obtained
         Node* curr = table[i];
-        while (curr!= NULL){
+        while (curr->next!= NULL){
             if (curr->key == k){
                 std::cout<<"Duplicate key insertion is not allowed";
                 return;//exit out

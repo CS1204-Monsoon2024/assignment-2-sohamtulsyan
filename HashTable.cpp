@@ -42,7 +42,7 @@ class HashTable{
         int new_size = nextPrime(size*2);
         Node** new_table = new Node*[new_size];
         //initializing every chain in our list to be NULL
-        for(i=0;i<new_size;i++) new_table[i] = NULL;
+        for(i=0;i<new_size;i++) {new_table[i] = NULL;}
         //Now we must rehash everything into the new table
         for (i = 0; i < size; i++) {
             Node* node = table[i];

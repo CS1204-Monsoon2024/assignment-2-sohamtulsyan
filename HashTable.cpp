@@ -121,7 +121,7 @@ class HashTable{
         Node* node = table[i];
         while (node != nullptr) {
             if (node->val == v) {
-                return i-1; 
+                return i+1; 
             }
             node = node->next;
         }

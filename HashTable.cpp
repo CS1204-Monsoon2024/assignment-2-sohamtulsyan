@@ -75,7 +75,7 @@ class HashTable{
         Node* curr = table[i];
         while (curr!= NULL){
             if (curr->key == k){
-                std::cout<<"Duplicate key insertion is not allowed";
+                std::cout<<"Duplicate key insertion is not allowed"<<std::endl;
                 return;//exit out
             } 
             curr = curr->next;//if key is found
@@ -89,7 +89,7 @@ class HashTable{
         count++;
 
         //finally, we must check if a resize is needed.
-        if((count/size)>0.8)//if we exceed the given threshold
+        if((float)(count/size)>0.8)//if we exceed the given threshold
             resize();
     }
 

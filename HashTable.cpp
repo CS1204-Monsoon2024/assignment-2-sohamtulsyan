@@ -140,7 +140,7 @@ class HashTable{
                 std::cout << node->val << " ";
                 node = node->next; 
             }
-            std::cout<< "- ";
+            // std::cout<< "- ";
         }
     }
     std::cout<< std::endl;

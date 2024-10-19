@@ -44,14 +44,14 @@ class HashTable{
         //initializing every chain in our list to be NULL
         for(i=0;i<new_size;i++) new_table[i] = NULL;
         //Now we must rehash everything into the new table
-        for (int i = 0; i < size; i++) {
+        for (i = 0; i < size; i++) {
             Node* node = table[i];
             while (node != NULL) {
                 int new_index = node->key % new_size;//rehash each new node
-                Node* new_node = new Node(node->key, node->val);//this will be inserted into our table
-                new_node->next = new_table[new_index]; 
-                new_table[new_index] = new_node;
-                node = node->next;  // Move to the next node
+                Node* next_node = node->next;
+                node->next = new_table[new_index];
+                new_table[new_index] = node;
+                node = next_node;
             }
         }
         size = new_size;

@@ -70,7 +70,7 @@ class HashTable{
     }
 
     void insert(int v){
-        if(((count+1)/size)>0.8)//if we exceed the given threshold
+        if((count/size)>0.8)//if we exceed the given threshold
             resize();
         int k = v;
         i = k%size;//index obtained

@@ -69,7 +69,8 @@ class HashTable{
         count = 0;
     }
 
-    void insert(int k, int v){
+    void insert(int v){
+        int k = v;
         i = k%size;//index obtained
         Node* curr = table[i];
         while (curr!= NULL){
